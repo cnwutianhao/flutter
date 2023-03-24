@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:hok/item.dart';
 import 'package:http/http.dart' as http;
 
 class ItemsPage extends StatelessWidget {
@@ -53,7 +54,12 @@ class ItemsPage extends StatelessWidget {
                           subtitle: Text(
                               item['des1'].replaceAll(RegExp(r'<[^>]+>'), '')),
                           onTap: () {
-                            // 处理英雄点击事件
+                            // 跳转到装备详情页
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ItemPage(item: item)),
+                            );
                           },
                         ),
                         const SizedBox(height: 8),
