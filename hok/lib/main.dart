@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'hero.dart';
-import 'item.dart';
+import 'heroes.dart';
+import 'items.dart';
 
 void main() {
   runApp(const MyApp());
