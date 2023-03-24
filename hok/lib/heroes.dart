@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:hok/hero.dart';
 import 'package:http/http.dart' as http;
 
 class HeroesPage extends StatelessWidget {
@@ -52,7 +53,12 @@ class HeroesPage extends StatelessWidget {
                           title: Text(hero['name']),
                           subtitle: Text(hero['title']),
                           onTap: () {
-                            // 处理英雄点击事件
+                            // 跳转到英雄详情页
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HeroPage(hero: hero)),
+                            );
                           },
                         ),
                         const SizedBox(height: 8),
